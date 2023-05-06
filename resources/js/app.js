@@ -1,4 +1,4 @@
-import Dropzone from "dropzone";
+import Dropzone, { SUCCESS } from "dropzone";
 
 Dropzone.autoDiscover = false;
 
@@ -9,4 +9,8 @@ const dropzone = new Dropzone('#dropzone',{
     dictRemoveFile:'Borrar fotografía',
     maxFiles:1,
     uploadMultiple:false,
-})
+});
+
+dropzone.on('SUCCESS',function(file,response){
+alert(response);
+});
