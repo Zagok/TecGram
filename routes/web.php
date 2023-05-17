@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MuroController;
-use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ImagenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +32,8 @@ Route::post('/login', [LoginController::class, 'store'])->name('login.store');
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout.store');
 
 Route::get('/{user:username}', [MuroController::class, 'index'])->name('muro.index');
-
-Route::get('/muro/create', [MuroController::class, 'create'])->name('muro.create');
+Route::get('muro/create', [MuroController::class, 'create'])->name('muro.create');
 
 Route::post('/imagen', [ImagenController::class, 'store'])->name('imagen.store');
+
+Route::post('/muro', [MuroController::class, 'store'])->name('muro.store');
